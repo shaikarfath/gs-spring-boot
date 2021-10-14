@@ -61,7 +61,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script th:inline="javascript">
             $.ajax({
-                url: "https://xkcd.com/' + [[${id}]] + '/info.0.json",
+                url: 'https://xkcd.com/' + [[${id}]] + '/info.0.json',
                 type: "GET",
                 dataType: "json",
                 success: function(data){
