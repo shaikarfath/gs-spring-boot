@@ -34,6 +34,15 @@ public class HelloController {
 		return "xkcdSpecific";
 	}
 
+	@GetMapping("/nasaapod")
+	public String nasaApod(@RequestParam(name="date", required=false) String date, Model model) {
+		// if(date == null){
+		// 	date = "current date pic";
+		// }
+		model.addAttribute("date", date);
+		return "nasaApod";
+	}
+
 	// path variable method
 	// @GetMapping("/xkcdSpec/{id}")
 	// public String xkcdSpecific(@PathVariable String id, Model model) {
