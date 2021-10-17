@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.ui.Model;
+import java.text.SimpleDateFormat;  
+import java.util.Date;  
 
 @Controller
 public class HelloController {
@@ -34,11 +36,20 @@ public class HelloController {
 		return "xkcdSpecific";
 	}
 
+
+	Date date = new Date();  
+	SimpleDateFormat formatter = new SimpleDateFormat("yyyy/mm/dd");  
+	String currentDate= formatter.format(date); 
+
+
 	@GetMapping("/nasaapod")
-	public String nasaApod(@RequestParam(name = "api_key", required=true) String api_key,@RequestParam(name="date", required=false) String date, Model model) {
-		// if(api_key == null){
-		// 	api_key = "65VM0mvvF4QCsovmTQ86mbsLHndn14oLLWw61lgi";
-		// }
+	public String nasaApod(@RequestParam(name = "api_key", required=false) String api_key,@RequestParam(name="date", required=false) String date, Model model) {
+		if(api_key == null){
+			api_key = "65VM0mvvF4QCsovmTQ86mbsLHndn14oLLWw61lgi";
+		}
+		if(date == null){
+			date = currentDate;
+		}
 		model.addAttribute("date", date);
 		return "nasaApod";
 	}
