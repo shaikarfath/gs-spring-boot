@@ -35,11 +35,11 @@ public class HelloController {
 	}
 
 	@GetMapping("/nasaapod")
-	public String nasaApod(@RequestParam(name="date", required=false) String date, Model model) {
-		// if(date == null){
-		// 	date = "65VM0mvvF4QCsovmTQ86mbsLHndn14oLLWw61lgi";
-		// }
-		model.addAttribute("date", date);
+	public String nasaApod(@RequestParam(name="api_key", required=false) String api_key, Model model) {
+		if(api_key == null){
+			api_key = "65VM0mvvF4QCsovmTQ86mbsLHndn14oLLWw61lgi";
+		}
+		model.addAttribute("api_key", api_key);
 		return "nasaApod";
 	}
 

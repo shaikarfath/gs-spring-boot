@@ -53,9 +53,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script th:inline="javascript">
             $.ajax({
-                url: 'https://api.nasa.gov/planetary/apod'  + [[${date}]],
+                url: 'https://api.nasa.gov/planetary/apod'  + [[${api_key}]],
                 type: "GET",
-                dataType: "nasa",
+                dataType: "json",
                 success: function(data){
                     $(".comic").html(
                         '<p class="lead">' + data.title + data.explanation +
