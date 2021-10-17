@@ -33,9 +33,9 @@
         <!-- Page content-->
         <div class="container">
             <div class="text-center mt-5">
-                <h1>XKCD current comic</h1>
+                <h1>Nasa's Astronomical Picture of the Day</h1>
                 <!-- <p th:text="'Hello, ' + ${name} + '!'" /> -->
-                <p class="lead">Most recent XKCD comic</p>
+                <!-- <p class="lead">Most recent XKCD comic</p> -->
                 <!-- <p>Bootstrap v5.1.0</p> -->
                 <div class="comic">
                     <div class="d-flex justify-content-center">
@@ -53,7 +53,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script th:inline="javascript">
             $.ajax({
-                url: 'https://api.nasa.gov/planetary/apod'  + [[${api_key}]],
+                url: 'https://api.nasa.gov/planetary/apod'+ [[${date}]] ,
                 type: "GET",
                 dataType: "json",
                 success: function(data){
