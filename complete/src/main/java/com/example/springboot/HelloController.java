@@ -37,7 +37,7 @@ public class HelloController {
 	@GetMapping("/nasaapod")
 	public String nasaApod(@RequestParam(name="date", required=false) String date, Model model) {
 		// if(date == null){
-		// 	date = "current date pic";
+		// 	date = "65VM0mvvF4QCsovmTQ86mbsLHndn14oLLWw61lgi";
 		// }
 		model.addAttribute("date", date);
 		return "nasaApod";

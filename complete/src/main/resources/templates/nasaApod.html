@@ -53,13 +53,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script th:inline="javascript">
             $.ajax({
-                url: 'https://xkcd.com/' + [[${date}]] + '/info.0.json',
+                url: 'https://api.nasa.gov/planetary/apod'  + [[${date}]],
                 type: "GET",
-                dataType: "json",
+                dataType: "nasa",
                 success: function(data){
                     $(".comic").html(
-                        '<p class="lead">' + data.safe_title + 
-                            '</p> <img src="'+ data.img + '" alt="'+ data.alt + '"  height="600">'
+                        '<p class="lead">' + data.title + data.explanation +
+                        '</p> <img src="'+ data.url  + '"  height="600">' ,
+                         
                     )
                     
                 },
