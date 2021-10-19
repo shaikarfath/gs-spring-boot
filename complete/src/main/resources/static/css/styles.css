@@ -6,3 +6,8 @@ body h1{
     font-family: 'Times New Roman', Times, serif;
     font-size: 50px;
 }
+.comic img {
+    align-content: center;
+    max-width: max-content;
+    width:85em;
+}
