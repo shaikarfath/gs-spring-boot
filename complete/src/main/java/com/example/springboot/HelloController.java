@@ -43,10 +43,10 @@ public class HelloController {
 
 
 	@GetMapping("/nasaapod")
-	public String nasaApod(@RequestParam(name = "api_key", required=false) String api_key,@RequestParam(name="date", required=false) String date, Model model) {
-		if(api_key == null){
-			api_key = "65VM0mvvF4QCsovmTQ86mbsLHndn14oLLWw61lgi";
-		}
+	public String nasaApod(@RequestParam(name="date", required=false) String date, Model model) {
+		// if(api_key == null){
+		// 	api_key = "65VM0mvvF4QCsovmTQ86mbsLHndn14oLLWw61lgi";
+		// }
 		if(date == null){
 			date = currentDate;
 		}
