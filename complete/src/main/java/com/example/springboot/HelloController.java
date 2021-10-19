@@ -29,9 +29,9 @@ public class HelloController {
     // Request parameter method
 	@GetMapping("/xkcdSpec")
 	public String xkcdSpecific(@RequestParam(name="id", required=false) String id, Model model) {
-		// if(id == null){
-		// 	id = "200";
-		// }
+		if(id == null){
+			id = "200";
+		}
 		model.addAttribute("id", id);
 		return "xkcdSpecific";
 	}
