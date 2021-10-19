@@ -1,10 +1,8 @@
 body{
+    background-color:#c2e3ed;
     color:blue;
 }
 body h1{
-    font-family: monospace;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 50px;
-}
-nav {
-color: tomato;
 }
