@@ -42,7 +42,7 @@ public class HelloController {
 	String currentDate= formatter.format(date); 
 
 
-	@GetMapping("/nasaapod")
+	@GetMapping("/nasaapod?api_key=65VM0mvvF4QCsovmTQ86mbsLHndn14oLLWw61lgi")
 	public String nasaApod(@RequestParam(name="date", required=false) String date, Model model) {
 		// if(api_key == null){
 		// 	api_key = "65VM0mvvF4QCsovmTQ86mbsLHndn14oLLWw61lgi";
